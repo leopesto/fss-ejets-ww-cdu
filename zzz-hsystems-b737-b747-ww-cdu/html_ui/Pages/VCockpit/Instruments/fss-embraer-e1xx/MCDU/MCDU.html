@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="/Pages/vcockpit/Instruments/fss-embraer-e1xx/MCDU/MCDU.css" />
+
+<script type="text/html" id="fss-mcdu-template">
+    <mcdu-page id="page-blank" class="page pageActive"> </mcdu-page>
+    <!-- <mcdu-page-test id="page-test" class="page"></mcdu-page-test> -->
+    <!-- <mcdu-page-facilitytest id="page-facilitytest" class="page"></mcdu-page-facilitytest> -->
+    <mcdu-page-cb id="page-cb" class="page"></mcdu-page-cb>
+    <mcdu-page-dlk id="page-dlk" class="page"></mcdu-page-dlk>
+    <mcdu-page-fpl id="page-fpl" class="page"></mcdu-page-fpl>
+    <mcdu-page-menu id="page-menu" class="page"></mcdu-page-menu>
+    <mcdu-page-nav id="page-nav" class="page"></mcdu-page-nav>
+    <mcdu-page-perf id="page-perf" class="page"></mcdu-page-perf>
+    <mcdu-page-perf-init id="page-perf-init" class="page"></mcdu-page-perf-init>
+    <mcdu-page-perf-plan id="page-perf-plan" class="page"></mcdu-page-perf-plan>
+    <mcdu-page-perf-data id="page-perf-data" class="page"></mcdu-page-perf-data>
+    <mcdu-page-prog id="page-prog" class="page"></mcdu-page-prog>
+    <mcdu-page-radio id="page-radio" class="page"></mcdu-page-radio>
+    <mcdu-page-rte id="page-rte" class="page"></mcdu-page-rte>
+    <mcdu-page-trs id="page-trs" class="page"></mcdu-page-trs>
+    <mcdu-page-debug id="page-debug" class="page"></mcdu-page-debug>
+    <mcdu-page-tcasxpdr id="page-tcasxpdr" class="page"></mcdu-page-tcasxpdr>
+    <mcdu-page-comdetail id="page-comdetail" class="page"></mcdu-page-comdetail>
+    <mcdu-page-navdetail id="page-navdetail" class="page"></mcdu-page-navdetail>
+    <mcdu-page-posinit id="page-posinit" class="page"></mcdu-page-posinit>
+    <mcdu-page-possensors id="page-possensors" class="page"></mcdu-page-possensors>
+    <mcdu-page-vordme id="page-vordme" class="page"></mcdu-page-vordme>
+    <mcdu-page-departure id="page-departure" class="page"></mcdu-page-departure>
+    <mcdu-page-arrival id="page-arrival" class="page"></mcdu-page-arrival>
+    <mcdu-page-takeoff id="page-takeoff" class="page"></mcdu-page-takeoff>
+    <mcdu-page-takeoff-init id="page-takeoff-init" class="page"></mcdu-page-takeoff-init>
+    <mcdu-page-landing id="page-landing" class="page"></mcdu-page-landing>
+    <mcdu-page-landing-init id="page-landing-init" class="page"></mcdu-page-landing-init>
+    <mcdu-page-todataset id="page-todataset" class="page"></mcdu-page-todataset>
+    <mcdu-page-depappspd id="page-depappspd" class="page"></mcdu-page-depappspd>
+    <mcdu-page-navident id="page-navident" class="page"></mcdu-page-navident>
+    <mcdu-page-maintenance id="page-maintenance" class="page"></mcdu-page-maintenance>
+    <mcdu-page-dataload id="page-dataload" class="page"></mcdu-page-dataload>
+    <mcdu-page-deplim id="page-deplim" class="page"></mcdu-page-deplim>
+    <mcdu-page-galim id="page-galim" class="page"></mcdu-page-galim>
+    <mcdu-page-climb id="page-climb" class="page"></mcdu-page-climb>
+    <mcdu-page-cruise id="page-cruise" class="page"></mcdu-page-cruise>
+    <mcdu-page-descent id="page-descent" class="page"></mcdu-page-descent>
+    <mcdu-page-datalink id="page-datalink" class="page"></mcdu-page-datalink>
+    <mcdu-page-appspd id="page-appspd" class="page"></mcdu-page-appspd>
+    <mcdu-page-conversion id="page-conversion" class="page"></mcdu-page-conversion>
+    <mcdu-page-notam id="page-notam" class="page"></mcdu-page-notam>
+    <mcdu-page-closestapt id="page-closestapt" class="page"></mcdu-page-closestapt>
+    <mcdu-page-secfplmenu id="page-secfplmenu" class="page"></mcdu-page-secfplmenu>
+    <mcdu-page-fltsum id="page-fltsum" class="page"></mcdu-page-fltsum>
+    <mcdu-page-fuelmgt id="page-fuelmgt" class="page"></mcdu-page-fuelmgt>
+    <mcdu-page-eorange id="page-eorange" class="page"></mcdu-page-eorange>
+    <mcdu-page-atc id="page-atc" class="page"></mcdu-page-atc>
+    <mcdu-page-atsmenu id="page-atsmenu" class="page"></mcdu-page-atsmenu>
+    <mcdu-page-airdata id="page-airdata" class="page"></mcdu-page-airdata>
+    <mcdu-page-vnavdata id="page-vnavdata" class="page"></mcdu-page-vnavdata>
+    <mcdu-page-dlkfltplan id="page-dlkfltplan" class="page"></mcdu-page-dlkfltplan>
+    <div id="brightnessBar" style="display:none">pppppppppppppppppppp</div>
+    <div id="loadingIndicator"><i><!--processing...--></i></div>
+    <div id="keyboardToggle"></div>
+</script>
+
+<script type="text/html" import-script="/JS/SimPlane.js"></script>
+<script type="text/html" import-script="/JS/simvar.js"></script>
+<script type="text/html" import-script="/JS/dataStorage.js"></script>
+<script type="text/html" import-script="/Pages/vcockpit/Instruments/Shared/FlightElements/FlightPlanManager.js"></script>
+<script type="text/html" import-script="/Pages/vcockpit/Instruments/Shared/FlightElements/Waypoint.js"></script>
+<script type="text/html" import-script="/Pages/vcockpit/Instruments/Shared/FlightElements/Runway.js"></script>
+<script type="text/html" import-script="/Pages/vcockpit/Instruments/Shared/FlightElements/Approach.js"></script>
+<script type="text/html" import-script="/Pages/vcockpit/Instruments/Shared/FlightElements/WaypointLoader.js"></script>
+<script type="text/html" import-script="/Pages/vcockpit/Instruments/Airliners/Shared/FMC/FMCDataManager.js"></script>
+<script type="text/html" import-script="/Pages/vcockpit/Instruments/fss-embraer-e1xx/MCDU/sharedScripts/NavDataAPI.js"></script>
+<script type="text/html" import-script="/Pages/vcockpit/Instruments/fss-embraer-e1xx/MCDU/sharedScripts/MCDUData.js"></script>
+<script type="text/html" import-script="/Pages/vcockpit/Instruments/fss-embraer-e1xx/MCDU/sharedScripts/Scratchpad.js"></script>
+<script type="text/html" import-script="/Pages/vcockpit/Instruments/fss-embraer-e1xx/MCDU/sharedScripts/Radios.js"></script>
+<!-- <script type="text/html" import-template="/Pages/vcockpit/Instruments/fss-embraer-e1xx/MCDU/components/MCDUPage/MCDUPage.html"></script>
+<script type="text/html" import-script="/Pages/vcockpit/Instruments/fss-embraer-e1xx/MCDU/components/MCDUPage/MCDUPage.js"></script> -->
+<script type="text/html" import-script="/Pages/vcockpit/Instruments/fss-embraer-e1xx/MCDU/MCDU.js"></script>
+<script type="text/html" import-script="/Pages/vcockpit/Instruments/fss-embraer-e1xx/MCDU/dm_cdu.js"></script>
